@@ -93,9 +93,7 @@ button, input { font-family: inherit; }
 .nav__logo-icon {
   width: 32px; height: 32px;
   border-radius: 50%;
-  background: radial-gradient(circle at 35% 35%, #F0A500 0%, #7a5200 60%, #2a1a00 100%);
-  border: 1px solid rgba(240,165,0,0.35);
-  box-shadow: 0 0 14px rgba(240,165,0,0.3);
+  background: url('assets/logo/app_icon.png') center/cover no-repeat;
   flex-shrink: 0;
 }
 .nav__cta {
@@ -720,8 +718,7 @@ button, input { font-family: inherit; }
 .footer__logo-icon {
   width: 26px; height: 26px;
   border-radius: 50%;
-  background: radial-gradient(circle at 35% 35%, #F0A500 0%, #7a5200 60%, #2a1a00 100%);
-  border: 1px solid rgba(240,165,0,0.3);
+  background: url('assets/logo/app_icon.png') center/cover no-repeat;
 }
 .footer__tagline {
   font-size: 13px;
