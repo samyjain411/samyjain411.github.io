@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Gochar</title>
+  <meta name="description" content="Privacy Policy for Gochar Orrery." />
+  <meta name="theme-color" content="#080808" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav class="nav scrolled" role="navigation" aria-label="Main navigation">
+    <div class="container nav__inner">
+      <a href="/" class="nav__logo" aria-label="Gochar home">
+        <div class="nav__logo-icon" aria-hidden="true"></div>
+        Gochar
+      </a>
+      <a href="/#notify" class="nav__cta" role="button">Notify Me</a>
+    </div>
+  </nav>
+
+  <main class="legal-page">
+    <div class="container">
+      <article>
+        <a href="/" class="legal-back">Back to gocharapp.com</a>
+
+        <h1>Privacy Policy</h1>
+        <div class="legal-meta">
+          <strong>Last updated:</strong> 3 May 2026 &nbsp;&middot;&nbsp;
+          <strong>Effective date:</strong> 3 May 2026 &nbsp;&middot;&nbsp;
+          Developer: Samyak Jain &nbsp;&middot;&nbsp;
+          <a href="mailto:unalome.dev@gmail.com">unalome.dev@gmail.com</a>
+        </div>
+
+        <h2>1. Introduction</h2>
+        <p>Gochar Orrery ("the App", "we", "our") is a Vedic astronomical calendar and educational visualisation tool developed by Samyak Jain. This Privacy Policy describes what information the App collects, how it is used, how it is stored, and your rights regarding that information.</p>
+        <p>By installing or using the App you agree to the practices described in this policy. If you do not agree, please uninstall the App and do not use it.</p>
+
+        <h2>2. Information We Collect</h2>
+        <h3>2.1 Information You Provide</h3>
+        <table>
+          <thead><tr><th>Data</th><th>Purpose</th><th>Storage</th></tr></thead>
+          <tbody>
+            <tr><td>Google account name and email address</td><td>Authentication via Firebase Auth</td><td>Firebase servers (Google-managed)</td></tr>
+            <tr><td>Birth date and birth place</td><td>Computing personalised Vedic chart; Sarv&#257;&#7779;&#7789;akavarga transit analysis (planned)</td><td>On-device only (shared_preferences)</td></tr>
+            <tr><td>Notification preferences</td><td>Determining which planetary transit alerts to send</td><td>On-device only (shared_preferences)</td></tr>
+          </tbody>
+        </table>
+
+        <h3>2.2 Information Collected Automatically</h3>
+        <table>
+          <thead><tr><th>Data</th><th>Purpose</th><th>Storage</th></tr></thead>
+          <tbody>
+            <tr><td>Device location (latitude, longitude)</td><td>Computing accurate sunrise/sunset, Panchanga, and Lagna for your geographic position</td><td>On-device only; never transmitted</td></tr>
+            <tr><td>Advertising identifier (GAID / IDFA)</td><td>Serving rewarded video advertisements via Google AdMob</td><td>Google AdMob servers</td></tr>
+            <tr><td>App interaction data</td><td>AdMob SDK standard event logging (ad impressions, clicks)</td><td>Google AdMob servers</td></tr>
+          </tbody>
+        </table>
+        <p><strong>Location accuracy:</strong> The App requests <code>LocationAccuracy.low</code> (city-level precision). Exact street-level coordinates are not required and are not requested.</p>
+        <p><strong>Location timing:</strong> Location is read once per session when the App opens or when the user explicitly refreshes their position. Location is not tracked continuously in the background.</p>
+
+        <h2>3. Information We Do Not Collect</h2>
+        <ul>
+          <li>We do not collect, store, or transmit your birth details to any external server.</li>
+          <li>We do not build behavioural profiles or sell any data to third parties.</li>
+          <li>We do not use any analytics SDK (no Firebase Analytics, no Mixpanel, no Amplitude).</li>
+          <li>We do not collect payment card details. All subscription billing is handled entirely by the Apple App Store or Google Play billing systems. We receive only a confirmation of purchase status, not payment details.</li>
+          <li>We do not use cookies (the App is a native mobile application, not a web service).</li>
+        </ul>
+
+        <h2>4. How We Use Your Information</h2>
+        <table>
+          <thead><tr><th>Information</th><th>How it is used</th></tr></thead>
+          <tbody>
+            <tr><td>Google account name</td><td>Displayed on the Profile screen</td></tr>
+            <tr><td>Google email</td><td>Used as your account identifier in Firebase Auth</td></tr>
+            <tr><td>Birth date / place</td><td>Computing your Vedic natal chart; future personalised tips</td></tr>
+            <tr><td>Device location</td><td>Computing Panchanga (sunrise, sunset, Tithi, Nakshatra, Hora) for your position</td></tr>
+            <tr><td>Advertising identifier</td><td>Enabling Google AdMob to serve contextually appropriate rewarded video ads</td></tr>
+          </tbody>
+        </table>
+
+        <h2>5. Third-Party Services</h2>
+        <p>The App integrates the following third-party services. Each has its own privacy policy which governs how they handle data.</p>
+
+        <h3>5.1 Firebase Authentication (Google LLC)</h3>
+        <p>Used for Google Sign-In. Your Google account name and email address are transmitted to Firebase when you sign in. Firebase Authentication privacy policy: <a href="https://firebase.google.com/support/privacy" rel="noopener">firebase.google.com/support/privacy</a></p>
+
+        <h3>5.2 Google AdMob (Google LLC)</h3>
+        <p>Used to serve rewarded video advertisements in the Playground feature. AdMob collects your advertising identifier and standard ad interaction events. You can opt out of personalised ads at any time via your device settings:</p>
+        <ul>
+          <li><strong>Android:</strong> Settings &rarr; Google &rarr; Ads &rarr; Opt out of Ads Personalisation</li>
+          <li><strong>iOS:</strong> Settings &rarr; Privacy &amp; Security &rarr; Apple Advertising &rarr; Personalised Ads (off)</li>
+        </ul>
+        <p>AdMob privacy policy: <a href="https://policies.google.com/privacy" rel="noopener">policies.google.com/privacy</a></p>
+
+        <h3>5.3 Swiss Ephemeris (Astrodienst AG)</h3>
+        <p>The astronomical calculation library runs entirely on-device. It does not transmit any data to external servers.</p>
+
+        <h2>6. Data Retention</h2>
+        <table>
+          <thead><tr><th>Data</th><th>Retention period</th></tr></thead>
+          <tbody>
+            <tr><td>Firebase Auth account</td><td>Until you sign out or delete your account via the Profile screen</td></tr>
+            <tr><td>Birth details and preferences</td><td>Until you uninstall the App (stored in device shared_preferences)</td></tr>
+            <tr><td>Location data</td><td>Not stored; computed transiently and discarded each session</td></tr>
+            <tr><td>AdMob interaction logs</td><td>Governed by Google's data retention policies</td></tr>
+          </tbody>
+        </table>
+
+        <h2>7. Data Security</h2>
+        <p>Your birth details and notification preferences are stored locally on your device using the standard Android and iOS secure preferences mechanism. They are not transmitted to our servers. Firebase Authentication uses industry-standard TLS encryption for all network communication.</p>
+        <p>We take reasonable technical precautions to protect your information; however, no method of electronic storage or transmission is 100% secure, and we cannot guarantee absolute security.</p>
+
+        <h2>8. Children's Privacy</h2>
+        <p>The App is not directed at children under the age of 13. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child has provided personal information through the App, please contact us at <a href="mailto:unalome.dev@gmail.com">unalome.dev@gmail.com</a> and we will delete the information promptly.</p>
+
+        <h2>9. Your Rights</h2>
+        <p>Under the Digital Personal Data Protection Act 2023 (India) and applicable law, you have the right to:</p>
+        <ul>
+          <li><strong>Access</strong> the personal data we hold about you</li>
+          <li><strong>Correction</strong> of inaccurate personal data</li>
+          <li><strong>Erasure</strong> of your personal data</li>
+        </ul>
+        <p>To exercise any of these rights, email <a href="mailto:unalome.dev@gmail.com">unalome.dev@gmail.com</a>. We will respond within 30 days. For Firebase Auth data specifically, you can also manage and delete your Google account data directly at <a href="https://myaccount.google.com" rel="noopener">myaccount.google.com</a>.</p>
+
+        <h2>10. Governing Law</h2>
+        <p>This Privacy Policy is governed by the laws of India, including the Information Technology Act 2000 and the Digital Personal Data Protection Act 2023. Any disputes shall be subject to the jurisdiction of courts in India.</p>
+
+        <h2>11. Changes to This Policy</h2>
+        <p>We may update this Privacy Policy from time to time. The "Last updated" date at the top of this document will be revised accordingly. Continued use of the App after changes are posted constitutes acceptance of the revised policy. For material changes, we will notify you via an in-app notice.</p>
+
+        <h2>12. Contact</h2>
+        <p><strong>Email:</strong> <a href="mailto:unalome.dev@gmail.com">unalome.dev@gmail.com</a><br>
+        <strong>Response time:</strong> Within 30 days</p>
+      </article>
+    </div>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container footer__inner">
+      <div>
+        <div class="footer__logo">
+          <div class="footer__logo-icon" aria-hidden="true"></div>
+          Gochar
+        </div>
+        <p class="footer__tagline">Made with &#9825; and Swiss Ephemeris in India</p>
+      </div>
+      <nav class="footer__links" aria-label="Footer navigation">
+        <a class="footer__link" href="privacy.html">Privacy Policy</a>
+        <a class="footer__link" href="terms.html">Terms of Service</a>
+        <a class="footer__link" href="mailto:unalome.dev@gmail.com">Contact</a>
+      </nav>
+      <p class="footer__copy">&copy; 2026 Unalome Dev</p>
+    </div>
+  </footer>
+
+</body>
+</html>
