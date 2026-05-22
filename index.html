@@ -56,21 +56,30 @@
     <p class="hero__meta" data-reveal data-reveal-delay="3" style="display:none">Free core &nbsp;·&nbsp; &#8377;99/mo India &nbsp;·&nbsp; $4.99/mo global</p>
 
     <div class="hero__visual" data-reveal data-reveal-delay="4">
-      <div class="hero__phone">
-        <video autoplay loop muted playsinline aria-label="Gochar orrery timelapse showing geocentric planetary positions"
-               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-          <source src="assets/screenshots/orrery.mp4" type="video/mp4" />
-        </video>
-        <div class="hero__phone-placeholder" style="display:none">
-          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <circle cx="20" cy="20" r="18" stroke="#26A69A" stroke-width="1.5"/>
-            <circle cx="20" cy="20" r="3" fill="#26A69A"/>
-            <circle cx="20" cy="8"  r="1.5" fill="#26A69A" opacity="0.6"/>
-            <circle cx="32" cy="20" r="1.5" fill="#FF8F00" opacity="0.5"/>
-            <circle cx="20" cy="32" r="1.5" fill="#7E57C2" opacity="0.4"/>
-            <circle cx="8"  cy="20" r="1.5" fill="#26A69A" opacity="0.3"/>
-          </svg>
-          <span>Screenshot coming soon</span>
+      <div class="hero__phones">
+        <div class="hero__phone hero__phone--left">
+          <video autoplay loop muted playsinline aria-label="Gochar orrery timelapse showing geocentric planetary positions">
+            <source src="assets/screenshots/orrery.mp4" type="video/mp4" />
+          </video>
+          <div class="hero__phone-placeholder">
+            <svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="20" cy="20" r="18" stroke="#26A69A" stroke-width="1.5"/>
+              <circle cx="20" cy="20" r="3" fill="#26A69A"/>
+            </svg>
+            <span>Orrery</span>
+          </div>
+        </div>
+        <div class="hero__phone hero__phone--right">
+          <video autoplay loop muted playsinline aria-label="Daily panchanga card">
+            <source src="assets/screenshots/panchanga1.mp4" type="video/mp4" />
+          </video>
+          <div class="hero__phone-placeholder">
+            <svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="20" cy="20" r="18" stroke="#FF8F00" stroke-width="1.5"/>
+              <circle cx="20" cy="20" r="3" fill="#FF8F00"/>
+            </svg>
+            <span>Panchanga</span>
+          </div>
         </div>
       </div>
       <div class="hero__glow" aria-hidden="true"></div>
@@ -171,8 +180,9 @@
       </figure>
 
       <figure class="screenshots__item" role="listitem">
-        <img src="assets/screenshots/panchanga.png" alt="Daily panchanga card showing Tithi, Nakshatra and Muhurat" loading="lazy"
-             onerror="this.style.display='none'" />
+        <video autoplay loop muted playsinline aria-label="Daily panchanga card">
+          <source src="assets/screenshots/panchanga1.mp4" type="video/mp4" />
+        </video>
         <div class="screenshots__placeholder">Panchanga</div>
       </figure>
 
