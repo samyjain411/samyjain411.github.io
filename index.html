@@ -31,7 +31,7 @@
   <!-- Hero -->
   <section class="hero" aria-labelledby="hero-heading">
     <div class="hero__eyebrow" data-reveal>
-      <span>Vedic Calendar</span> &nbsp;·&nbsp; Panchanga &nbsp;·&nbsp; Orrery
+      <span>Geocentric Orrery</span> &nbsp;·&nbsp; Panchanga &nbsp;·&nbsp; Daily Rhythm
     </div>
 
     <h1 class="hero__headline" id="hero-heading" data-reveal data-reveal-delay="1">
@@ -39,8 +39,9 @@
     </h1>
 
     <p class="hero__sub" data-reveal data-reveal-delay="2">
-      Gochar is a complete Vedic calendar — Tithi, Nakshatra, Muhurat, festivals, transits —
-      wrapped around a living 2D orrery that shows you the geometry behind every calculation.
+      Gochar is a complete Vedic calendar — Tithi, Nakshatra, Muhurat, festivals, and planetary
+      transits — wrapped around a living geocentric orrery that shows you the geometry behind
+      every calculation.
     </p>
 
     <form class="hero__form" id="hero-form" action="https://formspree.io/f/{FORMSPREE_ID}" method="POST" data-reveal data-reveal-delay="3">
@@ -56,18 +57,18 @@
 
     <div class="hero__visual" data-reveal data-reveal-delay="4">
       <div class="hero__phone">
-        <video autoplay loop muted playsinline aria-label="Gochar orrery showing geocentric planetary positions"
+        <video autoplay loop muted playsinline aria-label="Gochar orrery timelapse showing geocentric planetary positions"
                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
           <source src="assets/screenshots/orrery.mp4" type="video/mp4" />
         </video>
-        <div class="hero__phone-placeholder">
+        <div class="hero__phone-placeholder" style="display:none">
           <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <circle cx="20" cy="20" r="18" stroke="#F0A500" stroke-width="1.5"/>
-            <circle cx="20" cy="20" r="3" fill="#F0A500"/>
-            <circle cx="20" cy="8"  r="1.5" fill="#F0A500" opacity="0.6"/>
-            <circle cx="32" cy="20" r="1.5" fill="#F0A500" opacity="0.5"/>
-            <circle cx="20" cy="32" r="1.5" fill="#F0A500" opacity="0.4"/>
-            <circle cx="8"  cy="20" r="1.5" fill="#F0A500" opacity="0.3"/>
+            <circle cx="20" cy="20" r="18" stroke="#26A69A" stroke-width="1.5"/>
+            <circle cx="20" cy="20" r="3" fill="#26A69A"/>
+            <circle cx="20" cy="8"  r="1.5" fill="#26A69A" opacity="0.6"/>
+            <circle cx="32" cy="20" r="1.5" fill="#FF8F00" opacity="0.5"/>
+            <circle cx="20" cy="32" r="1.5" fill="#7E57C2" opacity="0.4"/>
+            <circle cx="8"  cy="20" r="1.5" fill="#26A69A" opacity="0.3"/>
           </svg>
           <span>Screenshot coming soon</span>
         </div>
@@ -76,20 +77,31 @@
     </div>
   </section>
 
-  <!-- Problem / Hook -->
-  <section class="hook" aria-label="Why Gochar">
+  <!-- Pillars / 3-Identity block -->
+  <section class="pillars" aria-labelledby="pillars-heading">
     <div class="container">
-      <div class="hook__grid" data-reveal>
-        <div class="hook__cell">
-          <p class="hook__label">The problem</p>
-          <h2 class="hook__heading">Every panchanga app shows you a table.</h2>
-          <p class="hook__body">You get today&#8217;s Tithi. You don&#8217;t get <em>why</em> the Tithi is what it is &mdash; the angular relationship between Sun and Moon that produces it.</p>
+      <p class="section-eyebrow" data-reveal>Three things in one app</p>
+      <h2 class="section-heading" id="pillars-heading" data-reveal data-reveal-delay="1">
+        Not just a panchanga.<br>Not just an orrery.
+      </h2>
+      <div class="pillars__grid" data-reveal data-reveal-delay="2">
+        <div class="pillar pillar--teal">
+          <div class="pillar__bar"></div>
+          <p class="pillar__label">The Orrery</p>
+          <h3 class="pillar__heading">The sky, geometrically.</h3>
+          <p class="pillar__body">All 9 grahas in live sidereal positions. True-vector retrograde trails. Pinch, zoom, rotate. Every Tithi and Nakshatra explained by what you can see.</p>
         </div>
-        <div class="hook__cell hook__cell--right">
-          <p class="hook__label">The solution</p>
-          <h2 class="hook__heading">Gochar shows you both.</h2>
-          <p class="hook__body">A complete daily panchanga &mdash; plus the live geocentric orrery that makes every number geometrically obvious. See the sky, understand the calendar.</p>
-          <div class="hook__accent-line"></div>
+        <div class="pillar pillar--amber">
+          <div class="pillar__bar"></div>
+          <p class="pillar__label">The Panchanga</p>
+          <h3 class="pillar__heading">Everything a calendar needs.</h3>
+          <p class="pillar__body">Tithi, Nakshatra, Yoga, Karana, Vara, 30 Muhurtas, Hora spiral, festival calendar, transit notifications — sunrise-anchored to your exact location.</p>
+        </div>
+        <div class="pillar pillar--violet">
+          <div class="pillar__bar"></div>
+          <p class="pillar__label">The Rhythm</p>
+          <h3 class="pillar__heading">Your day, mapped to the sky.</h3>
+          <p class="pillar__body">Eight Ayurvedic time windows — RISE through RESET — mapped to Vata, Pitta, Kapha cycles. The active Tattva element pulses in real time.</p>
         </div>
       </div>
     </div>
@@ -98,45 +110,45 @@
   <!-- Features -->
   <section class="features" aria-labelledby="features-heading">
     <div class="container">
-      <p class="section-eyebrow" data-reveal>What&#8217;s inside</p>
+      <p class="section-eyebrow" data-reveal>Features</p>
       <h2 class="section-heading" id="features-heading" data-reveal data-reveal-delay="1">Everything a panchanga needs,<br>and then some.</h2>
 
       <div class="features__grid">
 
-        <div class="feature-card" data-reveal data-reveal-delay="1">
+        <div class="feature-card feature-card--teal" data-reveal data-reveal-delay="1">
           <div class="feature-card__icon" aria-hidden="true">&#9678;</div>
           <h3 class="feature-card__name">Geocentric Orrery</h3>
-          <p class="feature-card__desc">Watch all 9 grahas orbit Earth in real sidereal time. Lahiri ayanamsa, always accurate.</p>
+          <p class="feature-card__desc">Watch all 9 grahas orbit Earth in live sidereal time. Pinch to zoom, rotate to explore. The retrogrades are real — drawn from true astrometric data, not approximations.</p>
         </div>
 
-        <div class="feature-card" data-reveal data-reveal-delay="2">
+        <div class="feature-card feature-card--amber" data-reveal data-reveal-delay="2">
           <div class="feature-card__icon" aria-hidden="true">&#127769;</div>
           <h3 class="feature-card__name">Daily Panchanga</h3>
-          <p class="feature-card__desc">Tithi, Nakshatra, Yoga, Karana, and Vara at a glance. Every element sunrise-anchored to your exact location.</p>
+          <p class="feature-card__desc">All five angas at a glance — Tithi, Nakshatra, Yoga, Karana, Vara. Hora spiral, Muhurta arc, moonrise and moonset. Every element sunrise-anchored to your location.</p>
         </div>
 
-        <div class="feature-card" data-reveal data-reveal-delay="3">
-          <div class="feature-card__icon" aria-hidden="true">&#9203;</div>
-          <h3 class="feature-card__name">Muhurat Windows</h3>
-          <p class="feature-card__desc">Brahma, Abhijit, Rahu Kalam, Dusk, and Nishita &mdash; color-coded arcs on a daily clock so you never miss an auspicious window.</p>
-        </div>
-
-        <div class="feature-card" data-reveal data-reveal-delay="1">
+        <div class="feature-card feature-card--violet" data-reveal data-reveal-delay="3">
           <div class="feature-card__icon" aria-hidden="true">&#12316;</div>
-          <h3 class="feature-card__name">Planetary Trails</h3>
-          <p class="feature-card__desc">Astrometric true-vector retrograde loops drawn over 20&ndash;550 days per planet. Watch Mercury loop. Watch Saturn arc.</p>
+          <h3 class="feature-card__name">Daily Rhythm</h3>
+          <p class="feature-card__desc">Eight time windows — RISE through RESET — mapped to Dosha cycles. The Tattva halo shows which element is active: Agni pulses at noon, Akasha deepens at midnight.</p>
         </div>
 
-        <div class="feature-card" data-reveal data-reveal-delay="2">
+        <div class="feature-card feature-card--teal" data-reveal data-reveal-delay="1">
+          <div class="feature-card__icon" aria-hidden="true">&#8767;</div>
+          <h3 class="feature-card__name">Planetary Trails</h3>
+          <p class="feature-card__desc">True-vector retrograde loops traced over 20–550 days per planet. Watch Mercury loop. Watch Saturn arc. Watch Rahu's shadow sweep the entire zodiac.</p>
+        </div>
+
+        <div class="feature-card feature-card--amber" data-reveal data-reveal-delay="2">
           <div class="feature-card__icon" aria-hidden="true">&#10022;</div>
           <h3 class="feature-card__name">Festival Calendar</h3>
-          <p class="feature-card__desc">Every Hindu festival with full context &mdash; multi-day breakdowns, month-by-month navigation, pinned month headers.</p>
+          <p class="feature-card__desc">Every Hindu festival with the story behind it. Multi-day events broken down day by day. Month scrubber, today pin. Tap any festival to read why it matters.</p>
         </div>
 
-        <div class="feature-card" data-reveal data-reveal-delay="3">
+        <div class="feature-card feature-card--violet" data-reveal data-reveal-delay="3">
           <div class="feature-card__icon" aria-hidden="true">&#9654;</div>
           <h3 class="feature-card__name">Playground</h3>
-          <p class="feature-card__desc">Scrub through time with a slider. Watch the sky animate. Timelapse the next eclipse or the next Saturn&ndash;Jupiter conjunction.</p>
+          <p class="feature-card__desc">Scrub time with a slider or run a timelapse. Set your date range, speed, and ayanamsa. Animate the next eclipse, the next great conjunction, or your own birth sky.</p>
         </div>
 
       </div>
@@ -146,46 +158,72 @@
   <!-- Screenshots -->
   <section class="screenshots" aria-labelledby="screenshots-heading">
     <div class="container">
-      <p class="section-eyebrow" data-reveal>App recordings</p>
+      <p class="section-eyebrow" data-reveal>App screens</p>
       <h2 class="section-heading" id="screenshots-heading" data-reveal data-reveal-delay="1">See the sky for yourself.</h2>
     </div>
-    <div class="screenshots__scroll" role="list" aria-label="App screen recordings">
+    <div class="screenshots__scroll" role="list" aria-label="App screens">
 
       <figure class="screenshots__item" role="listitem">
-        <video autoplay loop muted playsinline aria-label="Geocentric orrery with planetary trails">
+        <video autoplay loop muted playsinline aria-label="Geocentric orrery timelapse with planetary trails">
           <source src="assets/screenshots/orrery.mp4" type="video/mp4" />
         </video>
         <div class="screenshots__placeholder">Orrery</div>
       </figure>
 
       <figure class="screenshots__item" role="listitem">
-        <video autoplay loop muted playsinline aria-label="Daily panchanga card">
-          <source src="assets/screenshots/panchanga.mp4" type="video/mp4" />
-        </video>
+        <img src="assets/screenshots/panchanga.png" alt="Daily panchanga card showing Tithi, Nakshatra and Muhurat" loading="lazy"
+             onerror="this.style.display='none'" />
         <div class="screenshots__placeholder">Panchanga</div>
       </figure>
 
       <figure class="screenshots__item" role="listitem">
-        <video autoplay loop muted playsinline aria-label="Planetary positions page">
-          <source src="assets/screenshots/grahas.mp4" type="video/mp4" />
-        </video>
+        <img src="assets/screenshots/grahas.png" alt="Planetary positions page with all 9 grahas" loading="lazy"
+             onerror="this.style.display='none'" />
         <div class="screenshots__placeholder">Grahas</div>
       </figure>
 
       <figure class="screenshots__item" role="listitem">
-        <video autoplay loop muted playsinline aria-label="Festival calendar">
-          <source src="assets/screenshots/festivals.mp4" type="video/mp4" />
-        </video>
+        <img src="assets/screenshots/festivals.png" alt="Festival calendar with sticky month headers" loading="lazy"
+             onerror="this.style.display='none'" />
         <div class="screenshots__placeholder">Festivals</div>
       </figure>
 
       <figure class="screenshots__item" role="listitem">
-        <video autoplay loop muted playsinline aria-label="Playground time explorer">
-          <source src="assets/screenshots/playground.mp4" type="video/mp4" />
-        </video>
+        <img src="assets/screenshots/playground.png" alt="Playground time explorer with timelapse controls" loading="lazy"
+             onerror="this.style.display='none'" />
         <div class="screenshots__placeholder">Playground</div>
       </figure>
 
+    </div>
+  </section>
+
+  <!-- Precision Callout -->
+  <section class="precision-callout" aria-labelledby="precision-heading">
+    <div class="container">
+      <div class="precision-callout__inner">
+        <p class="section-eyebrow" data-reveal>Accuracy</p>
+        <h2 class="precision-callout__heading" id="precision-heading" data-reveal data-reveal-delay="1">
+          Calculated to sub-arc-second precision.
+        </h2>
+        <p class="precision-callout__sub" data-reveal data-reveal-delay="2">
+          Sidereal positions only. Lahiri ayanamsa — the Chitra Paksha standard used in Indian jyotish.
+          Every sunrise, Tithi boundary, and Nakshatra transition computed for your exact latitude.
+        </p>
+      </div>
+      <div class="precision-stats" data-reveal data-reveal-delay="3">
+        <div class="precision-stat">
+          <p class="precision-stat__value">&lt;1&#8243;</p>
+          <p class="precision-stat__label">Planetary position accuracy<br>(arc-second)</p>
+        </div>
+        <div class="precision-stat">
+          <p class="precision-stat__value">27 + 30</p>
+          <p class="precision-stat__label">Nakshatras and Tithis<br>computed live, not cached</p>
+        </div>
+        <div class="precision-stat">
+          <p class="precision-stat__value">9 Grahas</p>
+          <p class="precision-stat__label">Including Rahu &amp; Ketu &mdash;<br>true lunar nodes, not mean</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -236,7 +274,6 @@
             <li class="pricing-card__feature"><span class="pricing-card__feature-icon">&#10003;</span>Playground (&#177;30 days)</li>
           </ul>
         </div>
-
 
       </div>
       <p class="pricing__note">Launching on App Store &amp; Google Play &nbsp;&#183;&nbsp; Billed through your store account</p>
