@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Delete Account — Gochar</title>
+  <meta name="description" content="Request deletion of your Gochar account and personal data." />
+  <meta name="theme-color" content="#080808" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .delete-steps {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin: 24px 0 32px;
+    }
+    .delete-steps li {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin: 0;
+    }
+    .delete-steps__num {
+      flex-shrink: 0;
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: var(--teal-glow);
+      border: 1px solid rgba(38,166,154,0.25);
+      color: var(--teal);
+      font-size: 13px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1px;
+    }
+    .delete-notice {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--violet);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      margin: 32px 0;
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+    .delete-notice strong { color: var(--text); }
+    .delete-form-wrap {
+      margin-top: 40px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: var(--surface);
+    }
+    .delete-form-wrap iframe {
+      width: 100%;
+      min-height: 600px;
+      border: none;
+      display: block;
+      background: transparent;
+      color-scheme: dark;
+    }
+    .delete-form-placeholder {
+      padding: 56px 40px;
+      text-align: center;
+      color: var(--text-faint);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    .delete-form-placeholder a {
+      color: var(--teal);
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav scrolled" role="navigation" aria-label="Main navigation">
+    <div class="container nav__inner">
+      <a href="/" class="nav__logo" aria-label="Gochar home">
+        <div class="nav__logo-icon" aria-hidden="true"></div>
+        Gochar
+      </a>
+      <a href="/#notify" class="nav__cta" role="button">Notify Me</a>
+    </div>
+  </nav>
+
+  <main class="legal-page">
+    <div class="container">
+      <article>
+        <a href="/" class="legal-back">Back to gocharapp.com</a>
+
+        <h1>Delete Your Account</h1>
+        <div class="legal-meta">
+          Developer: Unalome Dev &nbsp;&middot;&nbsp;
+          <a href="mailto:unalome.dev@gmail.com">unalome.dev@gmail.com</a>
+        </div>
+
+        <h2>What gets deleted</h2>
+        <p>Submitting this form will permanently delete your Gochar account. The following data will be removed:</p>
+        <ul>
+          <li><strong>Firebase Authentication record</strong> — your Google sign-in link to Gochar is removed. You will no longer be able to sign in with this account.</li>
+          <li><strong>Account identifier</strong> — your unique user ID and associated email address are erased from our authentication provider.</li>
+        </ul>
+        <p>The following data is stored only on your device and is not held on our servers. It is removed when you uninstall the app:</p>
+        <ul>
+          <li>Birth date and birth place</li>
+          <li>Notification preferences</li>
+          <li>Cached festival and panchanga data</li>
+        </ul>
+
+        <div class="delete-notice">
+          <strong>Deletion is permanent and cannot be undone.</strong> Once processed, your account cannot be recovered. Any active subscription must be cancelled separately via the Apple App Store or Google Play before deletion — cancelling your account does not automatically end billing.
+        </div>
+
+        <h2>How to find your User ID</h2>
+        <p>Your User ID is required to identify and delete the correct account. To find it:</p>
+        <ol class="delete-steps">
+          <li>
+            <span class="delete-steps__num">1</span>
+            <span>Open the Gochar app and sign in.</span>
+          </li>
+          <li>
+            <span class="delete-steps__num">2</span>
+            <span>Tap the <strong>Profile</strong> tab at the bottom of the screen.</span>
+          </li>
+          <li>
+            <span class="delete-steps__num">3</span>
+            <span>Tap the <strong>Settings</strong> icon (top right).</span>
+          </li>
+          <li>
+            <span class="delete-steps__num">4</span>
+            <span>Your User ID is shown under <strong>Account &rarr; User ID</strong>. Copy it and paste it into the form below.</span>
+          </li>
+        </ol>
+
+        <h2>Alternatively — delete from within the app</h2>
+        <p>You can also delete your account directly without using this form: go to <strong>Profile &rarr; Settings &rarr; Delete Account</strong>. This removes your authentication record instantly. The form below is provided for users who no longer have access to the app.</p>
+
+        <h2>Submit a deletion request</h2>
+        <p>Fill in your User ID and registered email address. Requests are processed within <strong>30 days</strong>. You will receive a confirmation email when deletion is complete.</p>
+
+        <div class="delete-form-wrap">
+          <!-- Replace the src below with your Google Form embed URL -->
+          <!-- To get the embed URL: open your Google Form → Send → Embed → copy the src from the <iframe> tag -->
+          <iframe
+            src="{GOOGLE_FORM_EMBED_URL}"
+            title="Account deletion request form"
+            aria-label="Account deletion request form">
+          </iframe>
+          <!-- Remove the placeholder below once you've replaced the src above -->
+          <div class="delete-form-placeholder" id="form-placeholder">
+            <p>
+              Form not yet configured.<br>
+              To request deletion now, email
+              <a href="mailto:unalome.dev@gmail.com?subject=Account%20Deletion%20Request">unalome.dev@gmail.com</a>
+              with your User ID.
+            </p>
+          </div>
+        </div>
+
+        <h2>Contact</h2>
+        <p>If you have trouble submitting the form or have any questions about data deletion, email us directly:</p>
+        <p>
+          <strong>Email:</strong> <a href="mailto:unalome.dev@gmail.com">unalome.dev@gmail.com</a><br>
+          <strong>Response time:</strong> Within 30 days
+        </p>
+      </article>
+    </div>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container footer__inner">
+      <div>
+        <div class="footer__logo">
+          <div class="footer__logo-icon" aria-hidden="true"></div>
+          Gochar
+        </div>
+        <p class="footer__tagline">Made with &#9825; in India</p>
+      </div>
+      <nav class="footer__links" aria-label="Footer navigation">
+        <a class="footer__link" href="privacy.html">Privacy Policy</a>
+        <a class="footer__link" href="terms.html">Terms of Service</a>
+        <a class="footer__link" href="delete-account.html">Delete Account</a>
+        <a class="footer__link" href="mailto:unalome.dev@gmail.com">Contact</a>
+      </nav>
+      <p class="footer__copy">&copy; 2026 Unalome Dev</p>
+    </div>
+  </footer>
+
+  <script>
+    /* Hide placeholder once the iframe src is set to a real URL */
+    const iframe = document.querySelector('.delete-form-wrap iframe');
+    const placeholder = document.getElementById('form-placeholder');
+    if (iframe && iframe.src && !iframe.src.includes('{GOOGLE_FORM_EMBED_URL}')) {
+      placeholder.style.display = 'none';
+    } else if (iframe) {
+      iframe.style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>
