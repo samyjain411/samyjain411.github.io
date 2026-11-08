@@ -1,70 +1,47 @@
-/* ── Nav blur on scroll ─────────────────────────────────── */
+/* ── Nav rule on scroll ─────────────────────────────────── */
 const nav = document.querySelector('.nav');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 40);
-}, { passive: true });
-
-/* ── Scroll reveal ──────────────────────────────────────── */
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.classList.add('visible');
-      revealObserver.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-
-document.querySelectorAll('[data-reveal]').forEach(el => revealObserver.observe(el));
-
-/* ── Smooth scroll to #notify ───────────────────────────── */
-document.querySelectorAll('[href="#notify"], .nav__cta').forEach(btn => {
-  btn.addEventListener('click', e => {
-    e.preventDefault();
-    document.getElementById('notify').scrollIntoView({ behavior: 'smooth', block: 'center' });
-  });
-});
-
-/* ── Waitlist form (shared handler for hero + waitlist) ──── */
-function setupForm(formId, inputId, successId, errorId) {
-  const form = document.getElementById(formId);
-  if (!form) return;
-  const input   = document.getElementById(inputId);
-  const success = document.getElementById(successId);
-  const error   = document.getElementById(errorId);
-
-  form.addEventListener('submit', async e => {
-    e.preventDefault();
-    const email = input ? input.value.trim() : '';
-    if (!email) return;
-
-    const submitBtn = form.querySelector('button[type="submit"]');
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Sending…';
-    if (error) error.style.display = 'none';
-
-    try {
-      const res = await fetch(form.action, {
-        method: 'POST',
-        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email }),
-      });
-
-      if (res.ok) {
-        form.style.display = 'none';
-        success.style.display = 'flex';
-      } else {
-        throw new Error('server_error');
-      }
-    } catch (_) {
-      submitBtn.disabled = false;
-      submitBtn.textContent = formId === 'hero-form' ? 'Notify Me' : 'Notify Me When It Launches';
-      if (error) {
-        error.style.display = 'block';
-        error.textContent = 'Something went wrong. Try emailing unalome.dev@gmail.com directly.';
-      }
-    }
-  });
+if (nav) {
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 8);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
 }
 
-setupForm('hero-form',     'hero-email',     'hero-success',     'hero-error');
-setupForm('waitlist-form', 'waitlist-email', 'waitlist-success', 'waitlist-error');
+/* ── Screenshot slots: drop an image that fails to load so its label shows ── */
+document.querySelectorAll('.shot img').forEach(img => {
+  const drop = () => img.remove();
+  if (img.complete && img.naturalWidth === 0) drop();
+  else img.addEventListener('error', drop);
+});
+
+/* ── Hero timelapse: fade in once it plays; stay still for reduced motion ── */
+const stageVideo = document.querySelector('.stage__video');
+if (stageVideo) {
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  stageVideo.addEventListener('playing', () => stageVideo.classList.add('playing'));
+  stageVideo.addEventListener('error', () => stageVideo.remove(), true);
+  const applyMotion = () => {
+    if (reduceMotion.matches) {
+      stageVideo.pause();
+      stageVideo.classList.remove('playing');
+    } else {
+      stageVideo.play().catch(() => {});
+    }
+  };
+  reduceMotion.addEventListener('change', applyMotion);
+  applyMotion();
+}
+
+/* ── Scroll reveal ──────────────────────────────────────── */
+const revealed = document.querySelectorAll('[data-reveal]');
+if (revealed.length && 'IntersectionObserver' in window) {
+  document.documentElement.classList.add('js');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  revealed.forEach(el => observer.observe(el));
+}

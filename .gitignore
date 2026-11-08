@@ -1,0 +1,5 @@
+.DS_Store
+
+# Raw recordings and pre-crop originals kept locally, not published
+assets/screenshots-originals/
+assets/video-originals/

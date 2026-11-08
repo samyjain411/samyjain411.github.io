@@ -3,329 +3,197 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gochar — Your daily panchanga, finally explained</title>
-  <meta name="description" content="Gochar is a complete Vedic calendar — Tithi, Nakshatra, Muhurat, festivals, and planetary transits — wrapped around a living 2D orrery that shows you the geometry behind every calculation." />
-  <meta property="og:title" content="Gochar — Your daily panchanga, finally explained" />
-  <meta property="og:description" content="A complete Vedic panchanga with a living geocentric orrery. Coming soon to iOS & Android." />
+  <title>Gochar — The Panchang, drawn from the sky</title>
+  <meta name="description" content="Gochar is a Vedic Panchang with a live sidereal sky: Tithi, Nakshatra, muhurtas, festivals and planetary transits, worked out for where you are. Free on Android." />
+  <meta property="og:title" content="Gochar — The Panchang, drawn from the sky" />
+  <meta property="og:description" content="Tithi, Nakshatra, muhurtas and festivals, shown in the positions of the Sun, Moon and planets that make them. Free on Android." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://gocharapp.com" />
-  <meta name="theme-color" content="#080808" />
+  <meta property="og:image" content="https://gocharapp.com/assets/logo/icon-512.png" />
+  <meta name="theme-color" content="#FAF6F0" />
+  <link rel="icon" type="image/png" href="assets/logo/icon-64.png" />
+  <link rel="apple-touch-icon" href="assets/logo/icon-180.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Anek+Latin:wght@300;400;500;600&family=Anek+Devanagari:wght@300;400;500&family=Anek+Kannada:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- Nav -->
-  <nav class="nav" role="navigation" aria-label="Main navigation">
-    <div class="container nav__inner">
-      <a href="/" class="nav__logo" aria-label="Gochar home">
-        <div class="nav__logo-icon" aria-hidden="true"></div>
+  <header class="nav">
+    <nav class="wrap nav__inner" aria-label="Main">
+      <a href="/" class="nav__logo">
+        <img src="assets/logo/icon-64.png" alt="" width="28" height="28" />
         Gochar
       </a>
-      <a href="#notify" class="nav__cta" role="button">Notify Me</a>
-    </div>
-  </nav>
+      <div class="nav__links">
+        <a class="nav__link" href="#today">Today</a>
+        <a class="nav__link" href="#sky">Orrery</a>
+        <a class="nav__link" href="#panchang">Panchang</a>
+        <a class="nav__link" href="#readings">Readings</a>
+        <a class="nav__link" href="#charts">Charts</a>
+        <a class="btn btn--outline" href="https://play.google.com/store/apps/details?id=app.gochar.orrery">Download</a>
+      </div>
+    </nav>
+  </header>
 
-  <!-- Hero -->
-  <section class="hero" aria-labelledby="hero-heading">
-    <div class="hero__eyebrow" data-reveal>
-      <span>Live Planetary Gochar</span> &nbsp;·&nbsp; Retrogrades &nbsp;·&nbsp; Eclipses
-    </div>
+  <main>
 
-    <h1 class="hero__headline" id="hero-heading" data-reveal data-reveal-delay="1">
-      Watch the retrogrades.<br><em>Live.</em>
-    </h1>
+    <!-- Hero -->
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <p class="eyebrow" data-reveal>Vedic Panchang · Live sidereal sky</p>
+      <h1 class="hero__title" id="hero-title" data-reveal>The Panchang, drawn from the sky.</h1>
+      <p class="hero__sub" data-reveal>Tithi, Nakshatra, muhurtas and festivals, shown in the positions of the Sun, Moon and planets that make them. Worked out for where you are.</p>
+      <div class="hero__actions" data-reveal>
+        <a class="btn" href="https://play.google.com/store/apps/details?id=app.gochar.orrery">
+          <svg width="18" height="20" viewBox="0 0 22 24" aria-hidden="true"><path d="M2 1.5 L13.5 12 L2 22.5 Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M13.5 12 L18.5 9 C20.2 10 20.2 14 18.5 15 Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          Get it on Google Play
+        </a>
+        <span class="store-note">iPhone, coming soon</span>
+      </div>
+    </section>
 
-    <p class="hero__sub" data-reveal data-reveal-delay="2">
-      Gochar is a live geocentric transit engine — watch retrogrades form, eclipses align,
-      and conjunctions build in real sidereal time. Wrapped in a complete Vedic panchanga:
-      Tithi, Nakshatra, Muhurat, festivals, and daily rhythms.
-    </p>
-
-    <form class="hero__form" id="hero-form" action="https://formspree.io/f/{FORMSPREE_ID}" method="POST" data-reveal data-reveal-delay="3">
-      <label class="sr-only" for="hero-email">Email address</label>
-      <input class="hero__input" id="hero-email" type="email" name="email" placeholder="your@email.com" required autocomplete="email" />
-      <button class="hero__submit" type="submit">Notify Me</button>
-    </form>
-    <div class="hero__success" id="hero-success" role="status">
-      &#10003; You're on the list!
-    </div>
-    <p class="hero__error" id="hero-error" role="alert" style="font-size:13px;color:#ff6b6b;margin-top:8px;display:none;"></p>
-    <p class="hero__meta" data-reveal data-reveal-delay="3" style="display:none">Free core &nbsp;·&nbsp; &#8377;99/mo India &nbsp;·&nbsp; $4.99/mo global</p>
-
-    <div class="hero__visual" data-reveal data-reveal-delay="4">
-      <div class="hero__phones">
-        <div class="hero__phone hero__phone--left">
-          <video autoplay loop muted playsinline aria-label="Gochar orrery timelapse showing geocentric planetary positions">
-            <source src="assets/screenshots/orrery.mp4" type="video/mp4" />
-          </video>
-          <div class="hero__phone-placeholder">
-            <svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <circle cx="20" cy="20" r="18" stroke="#26A69A" stroke-width="1.5"/>
-              <circle cx="20" cy="20" r="3" fill="#26A69A"/>
-            </svg>
-            <span>Orrery</span>
+    <!-- App screens -->
+    <section class="stage wrap" aria-label="App screens">
+      <div class="stage__panel" data-reveal>
+        <video class="stage__video" autoplay muted loop playsinline preload="auto" aria-hidden="true" tabindex="-1">
+          <source src="assets/video/orrery-timelapse.mp4" type="video/mp4" />
+        </video>
+        <div class="device device--side">
+          <div class="device__screen">
+            <div class="shot"><span class="shot__label">Today</span><img src="assets/screenshots/today.png" alt="The Today screen" loading="lazy" /></div>
           </div>
         </div>
-        <div class="hero__phone hero__phone--right">
-          <video autoplay loop muted playsinline aria-label="Daily panchanga card">
-            <source src="assets/screenshots/panchanga1.mp4" type="video/mp4" />
-          </video>
-          <div class="hero__phone-placeholder">
-            <svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <circle cx="20" cy="20" r="18" stroke="#FF8F00" stroke-width="1.5"/>
-              <circle cx="20" cy="20" r="3" fill="#FF8F00"/>
-            </svg>
-            <span>Panchanga</span>
+        <div class="device device--lead">
+          <div class="device__screen">
+            <div class="shot"><span class="shot__label">Orrery</span><img src="assets/screenshots/orrery.png" alt="The orrery: Earth at the centre with the Sun, Moon and planets around it" /></div>
+          </div>
+        </div>
+        <div class="device device--side">
+          <div class="device__screen">
+            <div class="shot"><span class="shot__label">Panchang</span><img src="assets/screenshots/panchang-day.png" alt="The day's Panchang" loading="lazy" /></div>
           </div>
         </div>
       </div>
-      <div class="hero__glow" aria-hidden="true"></div>
-    </div>
-  </section>
-
-  <!-- Pillars / 3-Identity block -->
-  <section class="pillars" aria-labelledby="pillars-heading">
-    <div class="container">
-      <p class="section-eyebrow" data-reveal>Three things in one app</p>
-      <h2 class="section-heading" id="pillars-heading" data-reveal data-reveal-delay="1">
-        Not just a panchanga.<br>Not just an orrery.
-      </h2>
-      <div class="pillars__grid" data-reveal data-reveal-delay="2">
-        <div class="pillar pillar--teal">
-          <div class="pillar__bar"></div>
-          <p class="pillar__label">Live Gochar</p>
-          <h3 class="pillar__heading">Retrogrades, eclipses, conjunctions — live.</h3>
-          <p class="pillar__body">Watch all 9 grahas move in real sidereal time. See Mercury station retrograde. Watch the eclipse shadow form. Every transit visualized as it actually happens in the sky.</p>
-        </div>
-        <div class="pillar pillar--amber">
-          <div class="pillar__bar"></div>
-          <p class="pillar__label">The Panchanga</p>
-          <h3 class="pillar__heading">Everything a calendar needs.</h3>
-          <p class="pillar__body">Tithi, Nakshatra, Yoga, Karana, Vara, 30 Muhurtas, Hora spiral, festival calendar, transit notifications — sunrise-anchored to your exact location.</p>
-        </div>
-        <div class="pillar pillar--violet">
-          <div class="pillar__bar"></div>
-          <p class="pillar__label">The Rhythm</p>
-          <h3 class="pillar__heading">Your day, mapped to the sky.</h3>
-          <p class="pillar__body">Eight Ayurvedic time windows — RISE through RESET — mapped to Vata, Pitta, Kapha cycles. The active Tattva element pulses in real time.</p>
-        </div>
+      <div class="facts">
+        <p><strong>Free</strong> to download</p>
+        <p><strong>English, हिन्दी, ಕನ್ನಡ</strong></p>
+        <p><strong>Sidereal</strong> · True Chitra Paksha</p>
+        <p><strong>Your sunrise</strong>, your location</p>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Features -->
-  <section class="features" aria-labelledby="features-heading">
-    <div class="container">
-      <p class="section-eyebrow" data-reveal>Features</p>
-      <h2 class="section-heading" id="features-heading" data-reveal data-reveal-delay="1">Everything a panchanga needs,<br>and then some.</h2>
-
-      <div class="features__grid">
-
-        <div class="feature-card feature-card--teal" data-reveal data-reveal-delay="1">
-          <div class="feature-card__icon" aria-hidden="true">&#9678;</div>
-          <h3 class="feature-card__name">Live Gochar Visualization</h3>
-          <p class="feature-card__desc">Watch retrogrades station, eclipses align, and conjunctions build in real sidereal time. All 9 grahas on a live geocentric canvas — pinch, zoom, rotate.</p>
-        </div>
-
-        <div class="feature-card feature-card--amber" data-reveal data-reveal-delay="2">
-          <div class="feature-card__icon" aria-hidden="true">&#127769;</div>
-          <h3 class="feature-card__name">Daily Panchanga</h3>
-          <p class="feature-card__desc">All five angas at a glance — Tithi, Nakshatra, Yoga, Karana, Vara. Hora spiral, Muhurta arc, moonrise and moonset. Every element sunrise-anchored to your location.</p>
-        </div>
-
-        <div class="feature-card feature-card--violet" data-reveal data-reveal-delay="3">
-          <div class="feature-card__icon" aria-hidden="true">&#12316;</div>
-          <h3 class="feature-card__name">Daily Rhythm</h3>
-          <p class="feature-card__desc">Eight time windows — RISE through RESET — mapped to Dosha cycles. The Tattva halo shows which element is active: Agni pulses at noon, Akasha deepens at midnight.</p>
-        </div>
-
-        <div class="feature-card feature-card--teal" data-reveal data-reveal-delay="1">
-          <div class="feature-card__icon" aria-hidden="true">&#8767;</div>
-          <h3 class="feature-card__name">Retrograde Trails</h3>
-          <p class="feature-card__desc">True-vector retrograde loops drawn from real astrometric data — 20 to 550 days per planet. Watch Mercury's loop, Saturn's arc, Rahu's 18-month zodiac sweep.</p>
-        </div>
-
-        <div class="feature-card feature-card--amber" data-reveal data-reveal-delay="2">
-          <div class="feature-card__icon" aria-hidden="true">&#10022;</div>
-          <h3 class="feature-card__name">Festival Calendar</h3>
-          <p class="feature-card__desc">Every Hindu festival with the story behind it. Multi-day events broken down day by day. Month scrubber, today pin. Tap any festival to read why it matters.</p>
-        </div>
-
-        <div class="feature-card feature-card--violet" data-reveal data-reveal-delay="3">
-          <div class="feature-card__icon" aria-hidden="true">&#9654;</div>
-          <h3 class="feature-card__name">Playground</h3>
-          <p class="feature-card__desc">Scrub time with a slider or run a timelapse. Set your date range, speed, and ayanamsa. Animate the next eclipse, the next great conjunction, or your own birth sky.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Screenshots -->
-  <section class="screenshots" aria-labelledby="screenshots-heading">
-    <div class="container">
-      <p class="section-eyebrow" data-reveal>App screens</p>
-      <h2 class="section-heading" id="screenshots-heading" data-reveal data-reveal-delay="1">Watch the transits unfold.</h2>
-    </div>
-    <div class="screenshots__scroll" role="list" aria-label="App screens">
-
-      <figure class="screenshots__item" role="listitem">
-        <video autoplay loop muted playsinline aria-label="Geocentric orrery timelapse with planetary trails">
-          <source src="assets/screenshots/orrery.mp4" type="video/mp4" />
-        </video>
-        <div class="screenshots__placeholder">Orrery</div>
-      </figure>
-
-      <figure class="screenshots__item" role="listitem">
-        <video autoplay loop muted playsinline aria-label="Daily panchanga card">
-          <source src="assets/screenshots/panchanga1.mp4" type="video/mp4" />
-        </video>
-        <div class="screenshots__placeholder">Panchanga</div>
-      </figure>
-
-      <figure class="screenshots__item" role="listitem">
-        <img src="assets/screenshots/grahas.png" alt="Planetary positions page with all 9 grahas" loading="lazy"
-             onerror="this.style.display='none'" />
-        <div class="screenshots__placeholder">Grahas</div>
-      </figure>
-
-      <figure class="screenshots__item" role="listitem">
-        <img src="assets/screenshots/festivals.png" alt="Festival calendar with sticky month headers" loading="lazy"
-             onerror="this.style.display='none'" />
-        <div class="screenshots__placeholder">Festivals</div>
-      </figure>
-
-      <figure class="screenshots__item" role="listitem">
-        <img src="assets/screenshots/playground.png" alt="Playground time explorer with timelapse controls" loading="lazy"
-             onerror="this.style.display='none'" />
-        <div class="screenshots__placeholder">Playground</div>
-      </figure>
-
-    </div>
-  </section>
-
-  <!-- Precision Callout -->
-  <section class="precision-callout" aria-labelledby="precision-heading">
-    <div class="container">
-      <div class="precision-callout__inner">
-        <p class="section-eyebrow" data-reveal>Accuracy</p>
-        <h2 class="precision-callout__heading" id="precision-heading" data-reveal data-reveal-delay="1">
-          Calculated to sub-arc-second precision.
-        </h2>
-        <p class="precision-callout__sub" data-reveal data-reveal-delay="2">
-          Sidereal positions only. Lahiri ayanamsa — the Chitra Paksha standard used in Indian jyotish.
-          Every sunrise, Tithi boundary, and Nakshatra transition computed for your exact latitude.
-        </p>
-      </div>
-      <div class="precision-stats" data-reveal data-reveal-delay="3">
-        <div class="precision-stat">
-          <p class="precision-stat__value">&lt;1&#8243;</p>
-          <p class="precision-stat__label">Planetary position accuracy<br>(arc-second)</p>
-        </div>
-        <div class="precision-stat">
-          <p class="precision-stat__value">27 + 30</p>
-          <p class="precision-stat__label">Nakshatras and Tithis<br>computed live, not cached</p>
-        </div>
-        <div class="precision-stat">
-          <p class="precision-stat__value">9 Grahas</p>
-          <p class="precision-stat__label">Including Rahu &amp; Ketu &mdash;<br>true lunar nodes, not mean</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Privacy Callout -->
-  <section class="privacy-callout" aria-labelledby="privacy-heading">
-    <div class="container">
-      <div class="privacy-callout__card" data-reveal>
-        <div>
-          <div class="privacy-callout__lock" aria-hidden="true">&#128274;</div>
-          <h2 class="privacy-callout__heading" id="privacy-heading">Built privacy-first.</h2>
-          <p class="privacy-callout__sub">Your data is used only to power your panchanga — nothing else.</p>
-        </div>
-        <ul class="privacy-callout__list" aria-label="Privacy guarantees">
-          <li class="privacy-callout__item">
-            <span><strong>Birth date &amp; place stored on-device only.</strong> Computed locally, never transmitted to any server.</span>
-          </li>
-          <li class="privacy-callout__item">
-            <span><strong>Location used for calculations only.</strong> City-level precision, read once per session, never stored or transmitted.</span>
-          </li>
-          <li class="privacy-callout__item">
-            <span><strong>No behavioral profiling.</strong> No analytics SDKs. We don&#8217;t track what you do inside the app.</span>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Pricing -->
-  <section class="pricing" aria-labelledby="pricing-heading">
-    <div class="container">
-      <p class="section-eyebrow" style="text-align:center" data-reveal>Pricing</p>
-      <h2 class="section-heading" id="pricing-heading" style="text-align:center" data-reveal data-reveal-delay="1">Core is free. Always.</h2>
-      <p class="section-sub" style="margin:0 auto 56px; text-align:center" data-reveal data-reveal-delay="2">The orrery, panchanga, festivals, and notifications are free. Premium unlocks the extras.</p>
-
-      <div class="pricing__grid">
-
-        <div class="pricing-card" data-reveal data-reveal-delay="1">
-          <p class="pricing-card__name">Free</p>
-          <p class="pricing-card__price">&#8377;0</p>
-          <p class="pricing-card__alt">Always free</p>
-          <div class="pricing-card__divider"></div>
-          <ul class="pricing-card__features">
-            <li class="pricing-card__feature"><span class="pricing-card__feature-icon">&#10003;</span>Geocentric orrery</li>
-            <li class="pricing-card__feature"><span class="pricing-card__feature-icon">&#10003;</span>Daily panchanga</li>
-            <li class="pricing-card__feature"><span class="pricing-card__feature-icon">&#10003;</span>Muhurat windows</li>
-            <li class="pricing-card__feature"><span class="pricing-card__feature-icon">&#10003;</span>Festival calendar</li>
-            <li class="pricing-card__feature"><span class="pricing-card__feature-icon">&#10003;</span>Transit notifications</li>
-            <li class="pricing-card__feature"><span class="pricing-card__feature-icon">&#10003;</span>Playground (&#177;30 days)</li>
+    <!-- 01 Today -->
+    <section class="section wrap" id="today" aria-labelledby="today-title">
+      <div class="split">
+        <div class="split__text" data-reveal>
+          <p class="eyebrow">01 — Today</p>
+          <h2 class="display" id="today-title">Every day has a character.</h2>
+          <p class="lede">One reading for the day, from all five limbs of the Panchang read together: what kind of day it is, one thing worth doing, and how the hours from sunrise unfold.</p>
+          <ul class="rows">
+            <li><span class="rows__name">Five windows</span><span class="rows__desc">The day divided from your own sunrise, and what each part suits.</span></li>
+            <li><span class="rows__name">A raga for each</span><span class="rows__desc">Chosen for the hour and the mood of the day, with a practice to try.</span></li>
+            <li><span class="rows__name">One thing to do</span><span class="rows__desc">A small act that fits the day: work, home, people or yourself.</span></li>
           </ul>
         </div>
-
-      </div>
-      <p class="pricing__note">Launching on App Store &amp; Google Play &nbsp;&#183;&nbsp; Billed through your store account</p>
-    </div>
-  </section>
-
-  <!-- Waitlist -->
-  <section class="waitlist" id="notify" aria-labelledby="waitlist-heading">
-    <div class="container">
-      <h2 class="waitlist__heading" id="waitlist-heading" data-reveal>Be first to know<br>when Gochar launches.</h2>
-      <p class="waitlist__sub" data-reveal data-reveal-delay="1">One email when it&#8217;s live. Nothing else.</p>
-
-      <form class="waitlist__form" id="waitlist-form" action="https://formspree.io/f/{FORMSPREE_ID}" method="POST" data-reveal data-reveal-delay="2">
-        <label class="sr-only" for="waitlist-email">Email address</label>
-        <input class="waitlist__input" id="waitlist-email" type="email" name="email" placeholder="your@email.com" required autocomplete="email" />
-        <button class="waitlist__submit" type="submit">Notify Me When It Launches</button>
-      </form>
-      <div class="waitlist__success" id="waitlist-success" role="status">
-        &#10003; &nbsp;You&#8217;re on the list!
-      </div>
-      <p class="waitlist__error" id="waitlist-error" role="alert"></p>
-      <p class="waitlist__meta" data-reveal data-reveal-delay="3">No spam. No newsletters. Just a single launch notification.</p>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer" role="contentinfo">
-    <div class="container footer__inner">
-      <div>
-        <div class="footer__logo">
-          <div class="footer__logo-icon" aria-hidden="true"></div>
-          Gochar
+        <div class="split__media" data-reveal>
+          <div class="phone">
+            <div class="shot"><span class="shot__label">Day reading</span><img src="assets/screenshots/day-quality.png" alt="The day's reading, with its five windows and ragas" loading="lazy" /></div>
+          </div>
         </div>
-        <p class="footer__tagline">Made with &#9825; in India</p>
       </div>
-      <nav class="footer__links" aria-label="Footer navigation">
-        <a class="footer__link" href="privacy.html">Privacy Policy</a>
-        <a class="footer__link" href="terms.html">Terms of Service</a>
-        <a class="footer__link" href="delete-account.html">Delete Account</a>
+    </section>
+
+    <!-- 02 Orrery -->
+    <section class="section wrap" id="sky" aria-labelledby="sky-title">
+      <div class="night" data-reveal>
+        <div class="split">
+          <div class="split__text">
+            <p class="eyebrow">02 — The orrery</p>
+            <h2 class="display" id="sky-title">Every number has a shape.</h2>
+            <p class="lede">Earth at the centre, the eastern horizon on the left. The Sun climbs over the top through the day while the Moon and planets keep their own rings, as they do overhead.</p>
+          </div>
+          <div class="split__media">
+            <div class="orb shot"><span class="shot__label">Orrery</span><img src="assets/screenshots/orrery-circle.png" alt="Close view of the orrery" loading="lazy" /></div>
+          </div>
+        </div>
+        <div class="ideas">
+          <div><h3>Tithi is an angle</h3><p>The gap between Sun and Moon, seen from Earth. Every 12° is one tithi; thirty make the month.</p></div>
+          <div><h3>Muhurtas follow sunrise</h3><p>Daylight in fifteen parts from your sunrise, the night in fifteen more. The lit one is now.</p></div>
+          <div><h3>Retrogrades leave a loop</h3><p>Each planet trails its recent path. When the trail folds back, the planet is retrograde.</p></div>
+          <div><h3>Playground</h3><p>Scrub to any date or run a timelapse: the next eclipse, or the sky the day you were born.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 Panchang -->
+    <section class="section wrap" id="panchang" aria-labelledby="panchang-title">
+      <div class="split split--top">
+        <div class="split__text" data-reveal>
+          <p class="eyebrow">03 — Panchang</p>
+          <h2 class="display" id="panchang-title">The whole Panchang, for where you stand.</h2>
+          <p class="lede">Not a printed almanac for one city. Every time comes from your own coordinates and this morning's sunrise.</p>
+        </div>
+        <dl class="rows rows--lg split__text" data-reveal>
+          <div><dt>Five limbs</dt><dd>Tithi, Vara, Nakshatra, Yoga and Karana, with when each begins and ends.</dd></div>
+          <div><dt>Muhurtas &amp; kaalas</dt><dd>All thirty muhurtas, Rahu Kaal, Yamaganda, Gulika, Abhijit and Brahma Muhurta.</dd></div>
+          <div><dt>Hora</dt><dd>The planetary hours of the day and night, from your sunrise.</dd></div>
+          <div><dt>Festivals</dt><dd>The full calendar and the story behind each, multi-day festivals day by day.</dd></div>
+          <div><dt>Eclipses</dt><dd>Whether it is visible from your city, and its sutak timings if it is.</dd></div>
+          <div><dt>Alerts</dt><dd>When a window opens, or a planet changes sign or turns retrograde.</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- 04 Readings -->
+    <section class="section wrap" id="readings" aria-labelledby="readings-title">
+      <div class="mantra-panel" data-reveal>
+        <p class="eyebrow">04 — Readings</p>
+        <p class="mantra" lang="sa">ॐ नमः शिवाय</p>
+        <p class="mantra-day">Somavara · Shiva</p>
+        <h2 id="readings-title">Mantras and stories, grouped by deity.</h2>
+        <p class="lede">A mantra for each weekday from that day's own deity, and the old stories, such as the Devi Mahatmyam, told one part each morning.</p>
+      </div>
+    </section>
+
+    <!-- 05 Charts -->
+    <section class="section wrap" id="charts" aria-labelledby="charts-title">
+      <div class="split">
+        <div class="split__text" data-reveal>
+          <p class="eyebrow">05 — My Charts</p>
+          <h2 class="display" id="charts-title">Your chart, and your family's.</h2>
+          <p class="lede">A birth profile for everyone at home, each with a full classical report and how today's transits fall on it.</p>
+          <p class="inline-list">Birth chart <span>·</span> Divisional charts <span>·</span> Vimshottari Dasha <span>·</span> Shadbala <span>·</span> Bhava Bala <span>·</span> Ashtakavarga <span>·</span> Transit scores <span>·</span> Kundli matching</p>
+        </div>
+        <div class="split__media" data-reveal>
+          <div class="phone">
+            <div class="shot"><span class="shot__label">Chart report</span><img src="assets/screenshots/charts.png" alt="A birth chart report" loading="lazy" /></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Closing -->
+    <section class="closing" aria-labelledby="closing-title">
+      <h2 id="closing-title" data-reveal>Look up at today.</h2>
+      <p data-reveal>Free on Android. iPhone is on its way.</p>
+      <a class="btn" href="https://play.google.com/store/apps/details?id=app.gochar.orrery" data-reveal>
+        <svg width="18" height="20" viewBox="0 0 22 24" aria-hidden="true"><path d="M2 1.5 L13.5 12 L2 22.5 Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M13.5 12 L18.5 9 C20.2 10 20.2 14 18.5 15 Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        Get it on Google Play
+      </a>
+    </section>
+
+  </main>
+
+  <footer class="wrap">
+    <div class="footer__inner">
+      <p class="footer__copy">&copy; 2026 Unalome Dev · Made in India</p>
+      <nav class="footer__links" aria-label="Footer">
+        <a class="footer__link" href="privacy.html">Privacy</a>
+        <a class="footer__link" href="terms.html">Terms</a>
+        <a class="footer__link" href="delete-account.html">Delete account</a>
         <a class="footer__link" href="mailto:unalome.dev@gmail.com">Contact</a>
       </nav>
-      <p class="footer__copy">&copy; 2026 Unalome Dev</p>
     </div>
   </footer>
 
